@@ -1,16 +1,25 @@
 # 3taps API Java Wrapper
 
+
+## Dependency :
+
+Java 5+
+
 ## Use
 
 To use the 3taps API Java Wrapper, simply add `./distrib/threetaps.jar` to your classpath.
 
 ## Building
 
-Most users can simply use the threetaps.jar located in the distrib folder, but if you'd like to build, run `ant` in the project root directory.
+You can build using ant, but most users can use the threetaps.jar located in the distrib directory (built for Java 6).
 
 ## Example
 
 See test cases for examples.
+
+Here's a simple one to get you started.
+
+Message systemMessage = ThreetapsClient.getInstance().getStatusClient().system();
 
 ## License
 
