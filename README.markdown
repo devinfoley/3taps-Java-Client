@@ -1,7 +1,7 @@
 # 3taps API Java Wrapper
 
 
-## Dependency :
+## Dependency
 
 Java 5+
 
