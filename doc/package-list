@@ -1,0 +1,7 @@
+com.threetaps.client
+com.threetaps.dto.geocoder
+com.threetaps.dto.posting
+com.threetaps.dto.search
+com.threetaps.model
+com.threetaps.model.annotations
+com.threetaps.util

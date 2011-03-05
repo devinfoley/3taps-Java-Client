@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project basedir="." default="jar" name="threetaps">
+
+	<property name="build" value="${basedir}/bin" />
+	<property name="distrib" value="${basedir}/distrib" />
+	<property name="source" value="${basedir}/src" />
+	<property name="lib" value="${basedir}/lib" />
+
+	<target name="cleanup">
+		<delete dir="${build}" />
+		<mkdir dir="${build}" />
+		<delete file="${distrib}/threetaps.jar" />
+	</target>
+
+	<target name="build" depends="cleanup">
+		<javac srcdir="${source}" destdir="${build}" source="1.5">
+			<classpath>
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="build">
+		<jar destfile="${distrib}/threetaps.jar" basedir="${build}" excludes="**/test/*">
+		</jar>
+	</target>
+</project>
