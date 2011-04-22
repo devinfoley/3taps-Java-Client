@@ -4,9 +4,10 @@ public class Source {
 
 	private String name;
 	private String code;
-	private String logoURL;
-	private String logoSmallURL;
-
+	private String logo_url;
+	private String logo_sm_url;
+	private Boolean hidden;
+	
 	public String getName() {
 		return name;
 	}
@@ -24,18 +25,26 @@ public class Source {
 	}
 
 	public String getLogoURL() {
-		return logoURL;
+		return logo_url;
 	}
 
 	public void setLogoURL(String logoURL) {
-		this.logoURL = logoURL;
+		this.logo_url = logoURL;
 	}
 
 	public String getLogoSmallURL() {
-		return logoSmallURL;
+		return logo_sm_url;
 	}
 
 	public void setLogoSmallURL(String logoSmallURL) {
-		this.logoSmallURL = logoSmallURL;
+		this.logo_sm_url = logoSmallURL;
+	}
+	
+	public Boolean getHidden() {
+		return hidden;
+	}
+	
+	public void setHidden(Boolean hidden) {
+		this.hidden = hidden;
 	}
 }
