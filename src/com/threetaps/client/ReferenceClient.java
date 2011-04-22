@@ -66,7 +66,7 @@ public class ReferenceClient extends Client {
 		final HttpResponse response = this.executeGet("/reference/source", null);
 		final String responseString = EntityUtils.toString(response.getEntity());
 
-		final Type type = new TypeToken<Collection<Location>>() {}.getType();
+		final Type type = new TypeToken<Collection<Source>>() {}.getType();
 
 		@SuppressWarnings("unchecked")
 		final List<Source> sources = (List<Source>)gson.fromJson(responseString, type);
