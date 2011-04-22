@@ -35,7 +35,7 @@ public abstract class Client {
 	protected String baseURL;
 	protected int port;
 
-	private HttpClient httpClient = new DefaultHttpClient();;
+	private HttpClient httpClient = new DefaultHttpClient();
 
 	protected Gson gson = new GsonBuilder().setDateFormat(Constants.DATE_FORMAT)
 		.excludeFieldsWithModifiers(Modifier.TRANSIENT)
