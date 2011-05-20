@@ -16,7 +16,7 @@ public class StatusClientTest extends TestCase {
 	protected StatusClient statusClient;
 	
 	protected void setUp() {
-		statusClient = ThreetapsClient.getInstance().getStatusClient();		
+		statusClient = ThreetapsClient.getInstance().setAuthID("jmrfhu59cnmtnzusshd62pbg").getStatusClient();		
 	}	
 
 	@Test

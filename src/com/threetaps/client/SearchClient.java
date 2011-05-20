@@ -1,14 +1,12 @@
 package com.threetaps.client;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 
 import com.google.gson.reflect.TypeToken;
-import com.threetaps.dto.search.BestMatchResponse;
 import com.threetaps.dto.search.RangeRequest;
 import com.threetaps.dto.search.RangeResponse;
 import com.threetaps.dto.search.SearchRequest;
@@ -56,14 +54,5 @@ public class SearchClient extends Client {
 		final Map<String, Integer> responseMap = gson.fromJson(responseString, new TypeToken<Map<String, Integer>>() {}.getType());
 		
 		return responseMap.get("count").intValue();
-	}
-
-	public BestMatchResponse bestMatch(String keywords) throws IOException {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("keywords", keywords);
-		final HttpResponse response = this.executeGet("/search/bestMatch", params);
-		final String responseString = EntityUtils.toString(response.getEntity());
-		
-		return (BestMatchResponse) gson.fromJson(responseString, BestMatchResponse.class);
 	}
 }

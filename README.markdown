@@ -19,7 +19,7 @@ See test cases for examples.
 
 Here's a simple one to get you started.
 
-Message systemMessage = ThreetapsClient.getInstance().getStatusClient().system();
+Message systemMessage = ThreetapsClient.getInstance().setAuthID("YOUR API KEY").getStatusClient().system();
 
 ## License
 

@@ -16,7 +16,7 @@ public class GeocoderClientTest extends TestCase {
 	protected GeocoderClient geocoderClient;
 	
 	protected void setUp() {
-		geocoderClient = ThreetapsClient.getInstance().getGeocoderClient();		
+		geocoderClient = ThreetapsClient.getInstance().setAuthID("jmrfhu59cnmtnzusshd62pbg").getGeocoderClient();		
 	}	
 
 	@Test

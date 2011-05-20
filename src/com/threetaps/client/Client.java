@@ -64,6 +64,8 @@ public abstract class Client {
 			IOException {
 
 		final List<NameValuePair> qparams = new ArrayList<NameValuePair>();
+		qparams.add(new BasicNameValuePair(ThreetapsClient.AUTH_ID_KEY, ThreetapsClient.getInstance().getAuthID()));
+		
 		if (params != null) {
 			for (Map.Entry<String, String> param : params.entrySet()) {
 				qparams.add(new BasicNameValuePair(param.getKey(), param.getValue()));
@@ -78,6 +80,8 @@ public abstract class Client {
 			IOException {
 
 		final List<NameValuePair> qparams = new ArrayList<NameValuePair>();
+		qparams.add(new BasicNameValuePair(ThreetapsClient.AUTH_ID_KEY, ThreetapsClient.getInstance().getAuthID()));
+		
 		if (params != null) {
 			for (Map.Entry<String, String> param : params.entrySet()) {
 				qparams.add(new BasicNameValuePair(param.getKey(), param.getValue()));

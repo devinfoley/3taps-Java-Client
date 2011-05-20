@@ -20,7 +20,7 @@ public class SearchClientTest extends TestCase {
 	protected SearchClient searchClient;
 	
 	protected void setUp() {
-		searchClient = ThreetapsClient.getInstance().getSearchClient();
+		searchClient = ThreetapsClient.getInstance().setAuthID("jmrfhu59cnmtnzusshd62pbg").getSearchClient();
 	}
 	
 	@Test
@@ -63,12 +63,6 @@ public class SearchClientTest extends TestCase {
 		final SummaryResponse summaryResponse = searchClient.summary(summaryRequest);
 		assert summaryResponse.getExecTimeMs().intValue() > 0;
 		assert summaryResponse.getTotals().get("E_BAY") > 0;
-	}	
-	
-	@Test
-	public void testBestMatch() throws IOException {
-		BestMatchResponse response = searchClient.bestMatch("Nintendo");
-		assert response.getCategory() != null;
 	}
 	
 	@Test

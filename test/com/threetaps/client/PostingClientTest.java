@@ -20,7 +20,7 @@ public class PostingClientTest extends TestCase {
 	protected PostingClient postingClient;
 	
 	protected void setUp() {
-		postingClient = ThreetapsClient.getInstance().getPostingClient();
+		postingClient = ThreetapsClient.getInstance().setAuthID("jmrfhu59cnmtnzusshd62pbg").getPostingClient();
 	}
 	
 	@Test
@@ -77,30 +77,5 @@ public class PostingClientTest extends TestCase {
 		
 		final DeleteResponse response = postingClient.delete(postKeysToDelete);
 		assert response.getSuccess().booleanValue() == true;
-	}
-	
-	@Test
-	public void testExists() throws IOException {
-		final Posting postingToCheck1 = new Posting();
-		postingToCheck1.setSource("E_BAY");
-		postingToCheck1.setExternalID("180634157546");
-		
-		final Posting postingToCheck2 = new Posting();
-		postingToCheck1.setSource("E_BAY");
-		postingToCheck1.setExternalID("DONTEXIST");
-		
-		final List<Posting> postingsToCheck = new ArrayList<Posting>();
-		postingsToCheck.add(postingToCheck1);
-		postingsToCheck.add(postingToCheck2);
-		
-		@SuppressWarnings("deprecation")
-		final List<Posting> checkedPostings = postingClient.exists(postingsToCheck);
-		assert checkedPostings.size() == postingsToCheck.size();
-		
-		assert checkedPostings.get(0).getExternalID().equals("180634157546");
-		assert checkedPostings.get(0).getExists() == true;
-		
-		assert checkedPostings.get(1).getExternalID().equals("DONTEXIST");
-		assert checkedPostings.get(0).getExists() == false;
 	}
 }

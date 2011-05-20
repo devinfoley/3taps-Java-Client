@@ -90,20 +90,4 @@ public class PostingClient extends Client {
 
 		return (DeleteResponse)gson.fromJson(responseString, DeleteResponse.class);
 	}
-	
-	@Deprecated
-	public List<Posting> exists(List<Posting> postingsToCheck) throws IOException {
-		
-		final Type type = new TypeToken<Collection<Posting>>() {}.getType();
-		
-		final Map<String, String> params = new HashMap<String, String>();
-		params.put("ids", gson.toJson(postingsToCheck, type));
-		
-		final HttpResponse response = this.executePost("/posting/exists", params);
-		final String responseString = EntityUtils.toString(response.getEntity());
-
-		@SuppressWarnings("unchecked")
-		final List<Posting> postings = (List<Posting>)gson.fromJson(responseString, type);
-		return postings;
-	}
 }

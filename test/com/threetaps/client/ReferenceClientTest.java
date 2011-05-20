@@ -16,7 +16,7 @@ public class ReferenceClientTest extends TestCase {
 	protected ReferenceClient referenceClient;
 	
 	protected void setUp() {
-		referenceClient = ThreetapsClient.getInstance().getReferenceClient();		
+		referenceClient = ThreetapsClient.getInstance().setAuthID("jmrfhu59cnmtnzusshd62pbg").getReferenceClient();		
 	}	
 
 	@Test
